@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *chats;
 
+@property (nonatomic, strong) ChatCell *dummyCell;
+
 - (void) reloadChats;
 
 @end
@@ -40,6 +42,7 @@
 - (IBAction)onSendChat:(id)sender {
     PFObject *message = [PFObject objectWithClassName:@"Message"];
     message[@"text"] = self.chatText.text;
+    message[@"user"] = [PFUser currentUser];
     [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 //        if (succeeded) {
 //            // The object has been saved.
@@ -47,6 +50,7 @@
 //            // There was a problem, check error.description
 //        }
 
+        self.chatText.text = @"";
         [self reloadChats];
     }];
 }
@@ -64,12 +68,40 @@
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self configureCell:self.dummyCell forRowAtIndexPath:indexPath];
+    [self.dummyCell layoutIfNeeded];
+
+    CGSize size = [self.dummyCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return size.height+1;
+}
+
+- (void)configureCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([cell isKindOfClass:[ChatCell class]])
+    {
+        ChatCell *textCell = (ChatCell *)cell;
+        [textCell setChat:self.chats[indexPath.row]];
+    }
+}
+- (ChatCell *)dummyCell {
+
+    if (!_dummyCell) {
+        _dummyCell = [self.tableView dequeueReusableCellWithIdentifier:@"ChatCell"];
+    }
+    return _dummyCell;
+
+}
+
+
 
 #pragma mark - Private methods
 
 - (void)reloadChats {
 
     PFQuery *query = [PFQuery queryWithClassName:@"Message"];
+    [query orderByDescending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded.

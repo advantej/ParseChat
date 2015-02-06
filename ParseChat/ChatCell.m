@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.chatMessageLabel.preferredMaxLayoutWidth = self.chatMessageLabel.frame.size.width;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -22,6 +23,19 @@
 
 - (void)setChat:(Chat *)chat {
     self.chatMessageLabel.text = chat.text;
+    self.userNameLabel.text = @"anonymous";
+    if (chat.user != nil) {
+        PFUser *user = chat.user;
+        [user fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+            self.userNameLabel.text = chat.user.username;
+        }];
+    }
+
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.chatMessageLabel.preferredMaxLayoutWidth = self.chatMessageLabel.frame.size.width;
 }
 
 

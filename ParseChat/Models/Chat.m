@@ -16,6 +16,7 @@
 
     if (self) {
         self.text = dictionary[@"text"];
+        self.user = dictionary[@"user"];
     }
 
     return self;

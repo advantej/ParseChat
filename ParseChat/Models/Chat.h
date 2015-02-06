@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Parse/Parse.h"
 
 @interface Chat : NSObject
 
 @property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) PFUser *user;
 
 - (id) initWithDictionary:(NSDictionary *)dictionary;
 
