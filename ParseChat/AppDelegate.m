@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Parse/Parse.h"
+#import "LoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +21,11 @@
     // Override point for customization after application launch.
 
     [Parse setApplicationId:@"DXsvTSLgsKT03gSSqy6V5KbLwVpgfEjmEsKzzQUP" clientKey: @"BXAzmCJhMtIVWhLVEiKIMzPCA5XI0Nt9NwvAOPVd"];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    self.window.rootViewController = [[LoginViewController alloc] init];
 
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
