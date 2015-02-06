@@ -16,6 +16,11 @@
 		8B2554E91A84571000DDA2B2 /* ParseChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2554E81A84571000DDA2B2 /* ParseChatTests.m */; };
 		8B2554F71A845EA800DDA2B2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2554F51A845EA800DDA2B2 /* LoginViewController.m */; };
 		8B2554F81A845EA800DDA2B2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B2554F61A845EA800DDA2B2 /* LoginViewController.xib */; };
+		8B2554FC1A8467EA00DDA2B2 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2554FA1A8467EA00DDA2B2 /* ChatViewController.m */; };
+		8B2554FD1A8467EA00DDA2B2 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B2554FB1A8467EA00DDA2B2 /* ChatViewController.xib */; };
+		8B2555021A8469FD00DDA2B2 /* ChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2555001A8469FD00DDA2B2 /* ChatCell.m */; };
+		8B2555031A8469FD00DDA2B2 /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B2555011A8469FD00DDA2B2 /* ChatCell.xib */; };
+		8B2555061A846C3A00DDA2B2 /* Chat.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2555051A846C3A00DDA2B2 /* Chat.m */; };
 		8D11A7BA009325CD5D0DE919 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8B1818F2AE95C3430203F62 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +52,14 @@
 		8B2554F41A845EA800DDA2B2 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		8B2554F51A845EA800DDA2B2 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		8B2554F61A845EA800DDA2B2 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		8B2554F91A8467EA00DDA2B2 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		8B2554FA1A8467EA00DDA2B2 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		8B2554FB1A8467EA00DDA2B2 /* ChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		8B2554FF1A8469FD00DDA2B2 /* ChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatCell.h; sourceTree = "<group>"; };
+		8B2555001A8469FD00DDA2B2 /* ChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatCell.m; sourceTree = "<group>"; };
+		8B2555011A8469FD00DDA2B2 /* ChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
+		8B2555041A846C3A00DDA2B2 /* Chat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chat.h; sourceTree = "<group>"; };
+		8B2555051A846C3A00DDA2B2 /* Chat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chat.m; sourceTree = "<group>"; };
 		C7923F510ED2D678B9665C39 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C8B1818F2AE95C3430203F62 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -110,6 +123,7 @@
 		8B2554CB1A84571000DDA2B2 /* ParseChat */ = {
 			isa = PBXGroup;
 			children = (
+				8B2554FE1A8469D700DDA2B2 /* Views */,
 				8B2554D01A84571000DDA2B2 /* AppDelegate.h */,
 				8B2554D11A84571000DDA2B2 /* AppDelegate.m */,
 				8B2554D31A84571000DDA2B2 /* ViewController.h */,
@@ -121,6 +135,10 @@
 				8B2554F41A845EA800DDA2B2 /* LoginViewController.h */,
 				8B2554F51A845EA800DDA2B2 /* LoginViewController.m */,
 				8B2554F61A845EA800DDA2B2 /* LoginViewController.xib */,
+				8B2554F91A8467EA00DDA2B2 /* ChatViewController.h */,
+				8B2554FA1A8467EA00DDA2B2 /* ChatViewController.m */,
+				8B2554FB1A8467EA00DDA2B2 /* ChatViewController.xib */,
+				D527A26AAA49DDCFA9DCE025 /* Models */,
 			);
 			path = ParseChat;
 			sourceTree = "<group>";
@@ -149,6 +167,25 @@
 				8B2554E71A84571000DDA2B2 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8B2554FE1A8469D700DDA2B2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8B2554FF1A8469FD00DDA2B2 /* ChatCell.h */,
+				8B2555001A8469FD00DDA2B2 /* ChatCell.m */,
+				8B2555011A8469FD00DDA2B2 /* ChatCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D527A26AAA49DDCFA9DCE025 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B2555041A846C3A00DDA2B2 /* Chat.h */,
+				8B2555051A846C3A00DDA2B2 /* Chat.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,8 +271,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B2554F81A845EA800DDA2B2 /* LoginViewController.xib in Resources */,
+				8B2555031A8469FD00DDA2B2 /* ChatCell.xib in Resources */,
 				8B2554D81A84571000DDA2B2 /* Main.storyboard in Resources */,
 				8B2554DD1A84571000DDA2B2 /* LaunchScreen.xib in Resources */,
+				8B2554FD1A8467EA00DDA2B2 /* ChatViewController.xib in Resources */,
 				8B2554DA1A84571000DDA2B2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,8 +328,11 @@
 			files = (
 				8B2554F71A845EA800DDA2B2 /* LoginViewController.m in Sources */,
 				8B2554D51A84571000DDA2B2 /* ViewController.m in Sources */,
+				8B2554FC1A8467EA00DDA2B2 /* ChatViewController.m in Sources */,
+				8B2555021A8469FD00DDA2B2 /* ChatCell.m in Sources */,
 				8B2554D21A84571000DDA2B2 /* AppDelegate.m in Sources */,
 				8B2554CF1A84571000DDA2B2 /* main.m in Sources */,
+				8B2555061A846C3A00DDA2B2 /* Chat.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +458,7 @@
 				INFOPLIST_FILE = ParseChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};
 			name = Debug;
 		};
@@ -427,6 +470,7 @@
 				INFOPLIST_FILE = ParseChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};
 			name = Release;
 		};
